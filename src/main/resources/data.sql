@@ -1,0 +1,2 @@
+INSERT INTO AGENDAMENTO (title, description, score) VALUES ('DR RODRIGO', 'AGENDAMENTO1', 10);
+INSERT INTO AGENDAMENTO (title, description, score) VALUES ('DR RODRIGO', 'AGENDAMENTO2', 10);
