@@ -1,5 +1,7 @@
 package br.com.fiap.agendado.agendamento;
 
+import java.sql.Date;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -17,10 +19,12 @@ public class Agendamento {
     Long id;
     
     @NotBlank
-    String title;
+    String paciente;
     
 
-    String description;
+    String medico;
+
+    String data;
 
     @Min(1) @Max(10)
     Integer score;

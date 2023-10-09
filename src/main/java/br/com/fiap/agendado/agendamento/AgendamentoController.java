@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
-@RequestMapping("/agendamento")
+@RequestMapping("/agendamentos")
 public class AgendamentoController {
 
     @Autowired 
@@ -20,13 +20,15 @@ public class AgendamentoController {
     @GetMapping
     public String index(Model model){
         model.addAttribute("agendamentos", service.findAll());
-        return"agendamento/index";
+        return"agendamentos/index";
     }
 
     @GetMapping("/delete/{id}")
     public String delete(@PathVariable Long id){
         service.delete(id);
-        return "redirect:/agendamento";
+        return "redirect:/agendamentos";
     }
+
+
     
 }
