@@ -23,5 +23,9 @@ public class AgendamentoService {
 
     }
 
+    public void save(Agendamento agendamento) {
+        repository.save(agendamento);
+    }
+
 
 }

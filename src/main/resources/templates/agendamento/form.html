@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+  <body class="indigo lighten-4">
+    <nav class="nav-wrapper">
+          <div class="nav-wrapper deep-purple darken-3">
+            <a href="#" class="brand-logo">Agendado</a>
+            <ul id="nav-mobile" class="right hide-on-med-and-down">
+              <li><a href="#">Agenda</a></li>
+              <li><a href="#">Atendimento</a></li>
+        
+              <li><a href="#">Usuarios</a></li>
+            </ul>
+          </div>
+    </nav>
+
+    <main class="container ">
+        
+      <h1>Cadastrar agendamento</h1>
+
+      
+
+      <div class="row">
+        <form class="col s12" action="/agendamento" method="post">
+          <label>Browser Select</label>
+          <select name="title" class="browser-default">
+            <option value="" disabled selected>Choose your option</option>
+            <option value="1">Dr Rodrigo</option>
+            
+          </select>
+          <div class="row">
+            <div class="input-field col s12">
+              <input name="description" id="text" type="text" class="validate">
+              <label for="Titulo">descricao</label>
+            </div>
+          </div>
+          <div class="row">
+            <div class="input-field col s12">
+              <textarea id="textarea2" class="materialize-textarea" data-length="120"></textarea>
+              <label for="textarea2">Textarea</label>
+            </div>
+          </div>
+          <div class="card-action right-align">
+            <a href="/agendamento">Cancelar</a>
+            <button class="btn">Cadastrar</button>
+          </div>
+        </form>
+
+
+      </div>
+
+      
+
+
+
+
+
+    </main>
+    t
+    
+
+  </body>
+</html>

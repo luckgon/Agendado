@@ -7,6 +7,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
@@ -29,4 +30,15 @@ public class AgendamentoController {
         return "redirect:/agendamento";
     }
     
+    @GetMapping("novo")
+    public String form(){
+        return "agendamento/form";
+    }
+
+    @PostMapping
+    public String save(Agendamento agendamento){
+        service.save(agendamento);
+        return"redirect:/agendamento";
+    }
+
 }
