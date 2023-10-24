@@ -1,24 +1,24 @@
 <!DOCTYPE html>
-<html lang="PT-BR" xmlns:th="http://www.thymeleaf.org">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="style.css">
   <title>Document</title>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  <link rel="stylesheet" href="style.css">
 </head>
   <body class="indigo lighten-4">
     <nav class="nav-wrapper">
           <div class="nav-wrapper deep-purple darken-3">
             <a href="#" class="brand-logo">Agendado</a>
             <ul id="nav-mobile" class="right hide-on-med-and-down">
-              <li><a href="/agendamentos" th:text="#{agendamento.schedule}"></a></li>
-              <li><a href="/agendamentos/novo" th:text="#{agendamento.service}"></a></li>
+              <li><a href="/agendamentos" th:text="#{agendamento.agenda}"></a></li>
+              <li><a href="/agendamentos/novo" th:text="#{agendamento.atendimento}"></a></li>
         
-              <li><a href="#" th:text="#{users}"></a></li>
+              <li><a href="#" th:text="#{usuarios}"></a></li>
               <li>
                 <a class="dropdown-trigger" data-target="dropdown1">
 
