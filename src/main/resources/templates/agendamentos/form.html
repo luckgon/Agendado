@@ -26,31 +26,41 @@
         
       <h1>Cadastrar agendamento</h1>
 
-      
+      <p th:text="${agendamento}"></p>
 
-      <div class="row">
-        <form class="col s12" action="/agendamento" method="post">
-          <label>Browser Select</label>
-          <select name="title" class="browser-default">
-            <option value="" disabled selected>Choose your option</option>
-            <option value="1">Dr Rodrigo</option>
-            
-          </select>
-          <div class="row">
-            <div class="input-field col s12">
-              <input name="description" id="text" type="text" class="validate">
-              <label for="Titulo">descricao</label>
+      <div class="card">
+        <form class="col s12" th:action="${'/agendamentos'}" method="post">
+          <div class="card-content">
+
+            <label>Selecione o médico</label>
+            <select name="medico" id="medico" class="browser-default" required>
+              <option value="" disabled selected>Choose your option</option>
+              <option value="Dr Rodrigo">Dr Rodrigo</option>
+              
+            </select>
+            <div class="row">
+              <div class="input-field col s12">
+                <input name="paciente" id="paciente" type="text" class="validate" >
+                <label for="paciente">Paciente</label>
+              </div>
             </div>
-          </div>
-          <div class="row">
-            <div class="input-field col s12">
-              <textarea id="textarea2" class="materialize-textarea" data-length="120"></textarea>
-              <label for="textarea2">Textarea</label>
+            <div class="row">
+              <div class="input-field col s12">
+                <textarea id="textarea2" class="materialize-textarea" data-length="120"></textarea>
+                <label for="textarea2">Textarea</label>
+              </div>
             </div>
-          </div>
-          <div class="card-action right-align">
-            <a href="/agendamento">Cancelar</a>
-            <button class="btn">Cadastrar</button>
+            <p>
+              <label>
+                <input name="score" type="checkbox" class="filled-in" checked="checked"  value="10"/>
+                <span>10 Pontos</span>
+              </label>
+            </p>
+            <div class="card-action right-align">
+              <a href="/agendamentos">Cancelar</a>
+              <button class="btn">Cadastrar</button>
+            </div>
+
           </div>
         </form>
 

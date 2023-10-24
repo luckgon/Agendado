@@ -19,7 +19,7 @@ public class Agendamento {
     @NotBlank
     String paciente;
     
-
+    @NotBlank
     String medico;
 
     String data;
