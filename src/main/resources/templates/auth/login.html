@@ -1,35 +1,100 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
-<head>
+<html>
+  <head>
+    <!--Import Google Icon Font-->
+    <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!--Import materialize.css-->
+    <link type="text/css" rel="stylesheet" href=
+    "https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css" 
+    media="screen,projection"/>
 
+    <!-- QUERYMINE Page Center Css -->
 
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="style.css">
-  <title>Document</title>
-</head>
+    <style>
+            html,
+        body {
+            height: 100%;
+        }
+        html {
+            display: table;
+            margin: auto;
+        }
+        body {
+            display: table-cell;
+            vertical-align: middle;
+        }
+    </style>
+
+ 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  </head>
+
   <body class="indigo lighten-4">
-    <nav class="nav-wrapper">
-          <div class="nav-wrapper deep-purple darken-3">
-            <a href="#" class="brand-logo">Agendado</a>
-            <ul id="nav-mobile" class="right hide-on-med-and-down">
-              <li><a href="#">Agenda</a></li>
-              <li><a href="#">Atendimento</a></li>
-        
-              <li><a href="#">Usuarios</a></li>
-              <li>
-                <img class="avatar" src="https://i.pravatar.cc/300" alt="">
-              </li>
-            </ul>
-          </div>
-    </nav>
-    <h1>Agendado</h1>
-    <p></p>
+    
 
-    <a href="" class="btn"></a>
+        <!-- Form Section -->
+
+      <form action="" method="post" th:action="@{/login}"> <!-- Change The Form Method From Here-->
+    <div class="card-panel z-depth-5">
+
+        <!-- Form Logo Section  -->
+
+        <div class="row margin">
+            <div class="col s12 m12 l12 center">
+                <h3 class="brand-logo deep-purple-text darken-3">Faça o Login</h3>
+                
+            </div>
+        </div>
+
+        <!-- Form Username Input Section -->
+
+        <div class="col s12 m12 l12">
+            <div class="input-field">
+                
+                <input type="text" name="username" id="username">
+                <label for="username">Username</label>
+            </div>
+        </div>
+
+        <!-- Form Password Input Section -->
+
+        <div class="col m12 l12">
+            <div class="input-field">
+                
+                <input type="password" name="password" id="password">
+                <label for="password">Password</label>
+            </div>
+        </div>
+
+            <!-- Form Chekbox (Remember Me) Input Section -->
+
+        <br><br>
+        <div th:if="${param.error}">
+          Invalid username and password.
+        </div>
+        <div th:if="${param.logout}">
+            You have been logged out.
+        </div>
+
+            <!-- Form Button Section  -->
+
+        <div class="center">
+          <button class="btn btn-lg btn-primary col s12 m12 l12 center" type="submit">Sign in</button>
+        </div>
 
 
+    </div>
+    </form>
+
+
+
+              
+    <!--Import jQuery before materialize.js-->
+    <script type="text/javascript" 
+    src="https://code.jquery.com/jquery-2.1.1.min.js">
+    </script>
+    <script type="text/javascript" 
+    src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js">
+    </script>
   </body>
 </html>
