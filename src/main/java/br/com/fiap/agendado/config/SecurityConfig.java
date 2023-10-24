@@ -12,6 +12,7 @@ public class SecurityConfig {
     @Bean
     SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception{
         return http
+            // .oauth2Login(form -> form.loginPage("/login").permitAll())
             .formLogin(Customizer.withDefaults())
             .build();
     }
