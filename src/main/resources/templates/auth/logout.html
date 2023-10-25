@@ -15,11 +15,11 @@
     <main class="container center">
         <h1>Agendado</h1>
     
-        <p>Tem certeza que deseja sair da aplicação ?</p>
+        <p th:text="#{agendamento.logout}">Tem certeza que deseja sair da aplicação ?</p>
     
         <form th:action="${'/logout'}" method="post">
-            <a href="/agendamentos" class="btn grey">cancelar</a>
-            <button class="btn">sim, quero sair</button>
+            <a href="/agendamentos" class="btn grey" th:text="#{agendamento.cancelar}">cancelar</a>
+            <button class="btn" th:text="#{agendamento.sim}">sim, quero sair</button>
         </form>
 
     </main>

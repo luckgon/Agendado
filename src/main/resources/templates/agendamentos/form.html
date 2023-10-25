@@ -7,24 +7,51 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
   <title>Document</title>
+  <style>
+    .avatar{
+
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      margin-top: 15%;
+      margin-right: 50%;
+    }
+
+  </style>
+
+
 </head>
   <body class="indigo lighten-4">
     <nav class="nav-wrapper">
-          <div class="nav-wrapper deep-purple darken-3">
-            <a href="#" class="brand-logo">Agendado</a>
-            <ul id="nav-mobile" class="right hide-on-med-and-down">
-              <li><a href="#">Agenda</a></li>
-              <li><a href="#">Atendimento</a></li>
-        
-              <li><a href="#">Usuarios</a></li>
+      <div class="nav-wrapper deep-purple darken-3">
+        <a href="#" class="brand-logo">Agendado</a>
+        <ul id="nav-mobile" class="right hide-on-med-and-down">
+          <li><a href="/agendamentos" th:text="#{agendamento.agenda}"></a></li>
+          <li><a href="/agendamentos/novo" th:text="#{agendamento.atendimento}"></a></li>
+    
+          <li><a href="#" th:text="#{usuarios}"></a></li>
+          <li>
+            <a class="dropdown-trigger" data-target="dropdown1">
+
+              <img class="avatar" src="https://i.pravatar.cc/300" alt="">
+
+            </a>
+            <ul id='dropdown1' class='dropdown-content'>
+              <li><span th:text="${username}"></span></li>
+              <li class="divider" tabindex="-1"></li>
+              <li><a href="/logout" class="red-text"><i class="material-icons">logout</i>sair</a></li>
             </ul>
-          </div>
+
+          </li>
+        </ul>
+      </div>
     </nav>
 
     <main class="container ">
         
-      <h1>Cadastrar agendamento</h1>
+      <h1 th:text="#{agendamento.tituloform}">Cadastrar agendamento</h1>
 
       <p th:text="${agendamento}"></p>
 
@@ -32,16 +59,16 @@
         <form class="col s12" th:action="${'/agendamentos'}" method="post">
           <div class="card-content">
 
-            <label>Selecione o médico</label>
+            <label th:text="#{agendamento.selecao}"></label>
             <select name="medico" id="medico" class="browser-default" required>
-              <option value="" disabled selected>Choose your option</option>
+              <option value="" disabled selected th:text="#{agendamento.selecao2}">Choose your option</option>
               <option value="Dr Rodrigo">Dr Rodrigo</option>
               
             </select>
             <div class="row">
               <div class="input-field col s12">
                 <input name="paciente" id="paciente" type="text" class="validate" >
-                <label for="paciente">Paciente</label>
+                <label for="paciente" th:text="#{agendamento.paciente}">Paciente</label>
               </div>
             </div>
             <div class="row">
@@ -53,16 +80,27 @@
             <p>
               <label>
                 <input name="score" type="checkbox" class="filled-in" checked="checked"  value="10"/>
-                <span>10 Pontos</span>
+                <span th:text="#{agendamento.pontos}">10 Pontos</span>
               </label>
             </p>
             <div class="card-action right-align">
-              <a href="/agendamentos">Cancelar</a>
-              <button class="btn">Cadastrar</button>
+              <a href="/agendamentos" th:text="#{agendamento.cancelar}"></a>
+              <button class="btn" th:text="#{agendamento.cadastrar}"></button>
             </div>
 
           </div>
         </form>
+
+        <script>
+          document.addEventListener('DOMContentLoaded', function () {
+              var elems = document.querySelectorAll('.dropdown-trigger');
+              const options = {
+                  coverTrigger: false,
+                  constrainWidth: false
+              }
+              var instances = M.Dropdown.init(elems, options);
+          });
+        </script>
 
 
       </div>
