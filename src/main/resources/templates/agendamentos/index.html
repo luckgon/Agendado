@@ -46,10 +46,17 @@
             <div class="card-content white-text">
               <span class="card-title" th:text="${agendamento.medico}">Card Title</span>
               <p th:text="${agendamento.paciente}">teste de texto</p>
-              <span data-badge-caption="Pontos" class="badge blue white-text" th:text="${agendamento.score}"></span>
+              <span th:if="${agendamento.status !=1}" data-badge-caption="Pontos" class="badge blue white-text" th:text="${agendamento.score}"></span>
             </div>
             <div class="card-action">
-              <a th:href="${'/agendamentos/delete/' + agendamento.id}" class="waves-effect waves-light btn red"><i class="material-icons">delete</i></a>
+              <div th:if="${agendamento.status !=1}">
+                <a th:href="${'/agendamentos/delete/' + agendamento.id}" class="waves-effect waves-light btn red"><i class="material-icons">delete</i></a>
+                <a th:href="${'/agendamentos/conclude/' + agendamento.id}" class="waves-effect waves-light btn"><i class="material-icons">done</i></a>
+
+              </div>
+              <div th:if="${agendamento.status !=0}">
+                <i class="material-icons">done</i>
+              </div>
                     
             </div>
           </div>

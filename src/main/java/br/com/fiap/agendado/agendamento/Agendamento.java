@@ -27,6 +27,6 @@ public class Agendamento {
     @Min(1) @Max(10)
     Integer score;
 
-    @Min(1) @Max(100)
-    Integer status;
+    @Min(0) @Max(1)
+    Integer status = 0;
 }

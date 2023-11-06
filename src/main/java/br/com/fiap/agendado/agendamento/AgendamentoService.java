@@ -27,5 +27,14 @@ public class AgendamentoService {
         repository.save(agendamento);
     }
 
+    public void done(Long id) {
+        var optional = repository.findById(id);
+
+        var agendamento = optional.get();
+
+        agendamento.setStatus(agendamento.getStatus()+1);
+        repository.save(agendamento);
+    }
+
 
 }

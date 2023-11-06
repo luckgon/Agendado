@@ -52,4 +52,11 @@ public class AgendamentoController {
         return"redirect:/agendamentos";
     }
 
+    @GetMapping("conclude/{id}")
+    public String conclude(@PathVariable Long id){
+        service.done(id);
+        return "redirect:/agendamentos";
+
+    }
+
 }
