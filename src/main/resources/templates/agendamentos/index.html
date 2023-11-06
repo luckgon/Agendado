@@ -54,8 +54,8 @@
                 <a th:href="${'/agendamentos/conclude/' + agendamento.id}" class="waves-effect waves-light btn"><i class="material-icons">done</i></a>
 
               </div>
-              <div th:if="${agendamento.status !=0}">
-                <i class="material-icons">done</i>
+              <div th:if="${agendamento.status !=0}" class="center-align ">
+                <i class="small material-icons  green-text ">done</i>
               </div>
                     
             </div>
