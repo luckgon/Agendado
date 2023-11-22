@@ -7,6 +7,9 @@
     <link type="text/css" rel="stylesheet" href=
     "https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css" 
     media="screen,projection"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jomhuria&display=swap" rel="stylesheet">
 
     <!-- QUERYMINE Page Center Css -->
 
@@ -23,67 +26,82 @@
             display: table-cell;
             vertical-align: middle;
         }
+        h3 {
+            font-family: 'Jomhuria', serif;
+            font-size: 100px;
+        }
+        form{
+            width: 30vw;
+        }
+        .btn{
+            font-family: 'Jomhuria', serif;
+            font-size: 30px;
+        }
     </style>
 
  
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   </head>
 
-  <body class="indigo lighten-4">
+  
+  <body class="indigo white">
     
-
+    <img class="responsive-img" src="./img/MYCloud_1_1.png">
         <!-- Form Section -->
 
-      <form action="" method="post" th:action="@{/login}"> <!-- Change The Form Method From Here-->
-    <div class="card-panel z-depth-5">
+    <form action="" method="post" th:action="@{/login}"> <!-- Change The Form Method From Here-->
+        <div class="">
 
-        <!-- Form Logo Section  -->
+            <!-- Form Logo Section  -->
+            
 
-        <div class="row margin">
-            <div class="col s12 m12 l12 center">
-                <h3 class="brand-logo deep-purple-text darken-3" th:text="#{agendamento.titulo}"></h3>
-                
+            <div class="row margin">
+                <div class="col s12 m12 l12 center ">
+                    <h3 class="brand-logo blue-text darken-3" >Login</h3>
+                    
+                </div>
             </div>
-        </div>
 
-        <!-- Form Username Input Section -->
+            <!-- Form Username Input Section -->
 
-        <div class="col s12 m12 l12">
-            <div class="input-field">
-                
-                <input type="text" name="username" id="username">
-                <label for="username" th:text="#{agendamento.login}"></label>
+            <div class="col s12 m12 l12">
+                <div class="input-field">
+                    
+                    <input type="text" name="username" id="username">
+                    <label for="E-mail" th:text="#{agendamento.login}"></label>
+                </div>
             </div>
-        </div>
+            
+            <!-- Form Password Input Section -->
 
-        <!-- Form Password Input Section -->
-
-        <div class="col m12 l12">
-            <div class="input-field">
-                
-                <input type="password" name="password" id="password">
-                <label for="password" th:text="#{agendamento.senha}"></label>
+            <div class="col m12 l12">
+                <div class="input-field">
+                    
+                    <input type="password" name="password" id="password">
+                    <label for="password" th:text="#{agendamento.senha}"></label>
+                    <p>Ainda não tem conta?</p><a href="">Cadastre-se</a>
+                </div>
             </div>
+
+                <!-- Form Chekbox (Remember Me) Input Section -->
+
+            <br><br>
+            <div th:if="${param.error}">
+            Invalid username and password.
+            </div>
+            <div th:if="${param.logout}">
+                You have been logged out.
+            </div>
+
+                <!-- Form Button Section  -->
+                <div>
+                </div>
+
+            <div class="center">
+            <button class="btn btn-lg btn-primary col s12 m12 l12 center blue darken-3" type="submit">Entrar</button>
+            </div>
+
         </div>
-
-            <!-- Form Chekbox (Remember Me) Input Section -->
-
-        <br><br>
-        <div th:if="${param.error}">
-          Invalid username and password.
-        </div>
-        <div th:if="${param.logout}">
-            You have been logged out.
-        </div>
-
-            <!-- Form Button Section  -->
-
-        <div class="center">
-          <button class="btn btn-lg btn-primary col s12 m12 l12 center" type="submit">Sign in</button>
-        </div>
-
-
-    </div>
     </form>
 
 
